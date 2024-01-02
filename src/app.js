@@ -39,11 +39,11 @@ app.use(morgan("combined", { stream: accessLogStream }));
 configRoutes(app);
 
 app.listen(port, () => {
-    // console.log(
-    //     `${chalk.bold.yellow.bgMagenta(
-    //         "server running on port"
-    //     )}==>${chalk.bold.bgRed(port)}`
-    // );
+    console.log(
+        `${chalk.bold.yellow.bgMagenta(
+            "server running on port"
+        )}==>${chalk.bold.bgRed(port)}`
+    );
 });
 
 module.exports = app;

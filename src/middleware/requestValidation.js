@@ -9,6 +9,13 @@ const noteValidationRules = () => {
     ];
 }
 
+const noteUpdateValidationRules = () => {
+    return [
+        body('title').isLength({ min: 3 }).withMessage('Title must be at least 3 characters long').optional().bail(),
+        body('content').isLength({ min: 5 }).withMessage('Content must be at least 5 characters long').optional()
+    ];
+}
+
 const validateNoteId = () => {
     return [
         param('id').trim().isMongoId().withMessage('Invalid ID').bail(),
@@ -33,6 +40,7 @@ const validate = (req, res, next) => {
 }
 module.exports = {
     noteValidationRules,
+    noteUpdateValidationRules,
     validateNoteId,
     validate,
 }

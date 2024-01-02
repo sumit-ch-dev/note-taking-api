@@ -7,17 +7,17 @@ const mongoURI = process.env.MONGODB_URI || "mongodb://localhost:27017/notes-app
 const connectDB = async () => {
     try {
         await mongoose.connect(mongoURI);
-        // console.log(
-        //     `${chalk.bold.yellow.bgMagenta(
-        //         "MongoDB connected successfully"
-        //     )}`
-        // );
+        console.log(
+            `${chalk.bold.yellow.bgMagenta(
+                "MongoDB connected successfully"
+            )}`
+        );
     } catch (error) {
-        // console.log(
-        //     `${chalk.bold.yellow.bgMagenta(
-        //         "MongoDB connection unsuccessful"
-        //     )}`
-        // );
+        console.log(
+            `${chalk.bold.yellow.bgMagenta(
+                "MongoDB connection unsuccessful"
+            )}`
+        );
         console.log(error);
         process.exit(1);
     }
